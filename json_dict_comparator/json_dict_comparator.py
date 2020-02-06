@@ -9,7 +9,7 @@ def ordered(obj):
     return obj
 
 
-def json_dict_comparator(dict1, dict2):
+def json_dict_any_order_equal(dict1, dict2):
     return ordered(dict1) == ordered(dict2)
 
 
@@ -18,12 +18,12 @@ class TestJsonDictAnyOrderEqual(unittest.TestCase):
     def test_two_simple_dicts_are_equal(self):
         d1 = {'error': 'a', 'data': 'b'}
         d2 = {'error': 'a', 'data': 'b'}
-        self.assertTrue(json_dict_comparator(d1, d2))
+        self.assertTrue(json_dict_any_order_equal(d1, d2))
 
     def test_two_simple_dicts_are_not_equal(self):
         d1 = {'error': 'a', 'data': 'b'}
         d2 = {'error': 'as', 'data': 'b'}
-        self.assertFalse(json_dict_comparator(d1, d2))
+        self.assertFalse(json_dict_any_order_equal(d1, d2))
 
     def test_two_nested_dicts_with_list_in_different_order_are_equal(self):
         d1 = {
@@ -62,7 +62,7 @@ class TestJsonDictAnyOrderEqual(unittest.TestCase):
             ],
             'data': 'b'
         }
-        self.assertTrue(json_dict_comparator(d1, d2))
+        self.assertTrue(json_dict_any_order_equal(d1, d2))
 
     def test_two_nested_dicts_with_list_in_different_order_are_not_equal(self):
         d1 = {
@@ -101,7 +101,7 @@ class TestJsonDictAnyOrderEqual(unittest.TestCase):
             ],
             'data': 'b'
         }
-        self.assertFalse(json_dict_comparator(d1, d2))
+        self.assertFalse(json_dict_any_order_equal(d1, d2))
 
     def test_two_more_nested_dicts_with_lists_in_different_order_are_equal(self):
         d1 = {
@@ -148,7 +148,7 @@ class TestJsonDictAnyOrderEqual(unittest.TestCase):
             ],
             'data': 'b'
         }
-        self.assertTrue(json_dict_comparator(d1, d2))
+        self.assertTrue(json_dict_any_order_equal(d1, d2))
 
     def test_two_more_nested_dicts_with_lists_in_different_order_are_not_equal(self):
         d1 = {
@@ -195,7 +195,7 @@ class TestJsonDictAnyOrderEqual(unittest.TestCase):
             ],
             'data': 'b'
         }
-        self.assertFalse(json_dict_comparator(d1, d2))
+        self.assertFalse(json_dict_any_order_equal(d1, d2))
 
 
 if __name__ == '__main__':
