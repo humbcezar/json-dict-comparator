@@ -1,5 +1,6 @@
 # json-dict-comparator
 Provides tools for comparing python dictionaries obtained from json objects.
+Inspired by https://stackoverflow.com/questions/25851183/how-to-compare-two-json-objects-with-the-same-elements-in-a-different-order-equa
 
 # Installing
 ```
