@@ -1,4 +1,4 @@
-rom distutils.core import setup
+from distutils.core import setup
 setup(
     name = 'json_dict_comparator',
     packages = ['json_dict_comparator'],
